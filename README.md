@@ -30,10 +30,13 @@ Then run below command -
 - constants: Colors, Fonts etc.
 - navigator: Application Navigation stack.
 - utils: helper functions.
-- **tests**: contains tests cases files.
+- tests: contains tests cases files.
 
 ### Note
 
 - Application currently developed using JS, but for better type and complile time safey Typescript can be used
 - For linter I have used - eslint
 - I have used React Hooks and functional components
+
+### Demo
+![Demo image](https://github.com/sumitr25/PingPongScore/blob/master/demo.gif)
