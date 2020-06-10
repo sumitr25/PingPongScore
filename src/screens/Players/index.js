@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import {SafeAreaView, StyleSheet, TouchableOpacity} from 'react-native';
+import {Alert, SafeAreaView, StyleSheet, TouchableOpacity} from 'react-native';
 import {FlexContainer, LabelledTextInput} from '../../components';
 import {H1, H2} from '../../components/Text';
-import {Colors} from '../../constants';
+import {Colors, Screens} from '../../constants';
+import {isValidInput} from '../../utils';
 
 const styles = StyleSheet.create({
   button: {
@@ -34,7 +35,15 @@ const PlayerScreen = ({navigation}) => {
    * If not provided then an alert message is displayed.
    */
   const onContinue = () => {
-    // todo:
+    if (!isValidInput(player1Name) || !isValidInput(player2Name)) {
+      Alert.alert('Player name missing', 'Please enter both player names');
+      return;
+    }
+
+    navigation.navigate(Screens.Scores, {
+      player1Name,
+      player2Name,
+    });
   };
 
   return (
